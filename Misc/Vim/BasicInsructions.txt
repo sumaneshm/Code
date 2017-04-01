@@ -1,0 +1,68 @@
+Instructions:
+
+i -> Insert before LEtter
+I -> Insert from the beginning of the line
+a -> Append after the current letter
+A -> Append at the end of the line
+o -> Start with new line after the current line 
+O -> Start with new line before the current line
+r -> Single charater replacement (goes to read mode)
+R -> Replaces until we wants to stop
+
+Change modes:
+c -> Change mode (see the next section for more details)
+next line Editing.
+C -> Change everything to the end of the line.
+c, h-> Goes to change mode and removes the left character
+
+Deletion:
+x -> Deleting delete character.
+X -> Delete character before.
+d -> delete mode (with modifiers)
+D -> Delete the entire line from the current character.
+d, w-> Deletes the word.
+
+Yanking, cutting and pasting
+y -> Yanks (copies) with modifier
+Y -> Yank the entire line
+y,w -> Yanks a word
+y,W -> Yanks a word (without any respect to punctuation)
+p -> Paste after current char
+P -> Paste before current char
+d -> Delete mode (with modifier) (cuts) 
+D -> Deletes entire line from the current character (cuts)
+
+Navigation
+w -> Jumps to next word,
+W -> Jumps to next word (no respect for punctuations)
+b -> Move backwards by one word
+B -> Move backwards by one word (no respect for punctuations)
+e -> Move to the end of the word,and this is a test
+E -> Move to end of the word (no respect for punctuations)
+c, j-> Goes to change mode and removes the current and next line.
+gg -> Go to the beginning of the file
+G -> Goto the last line
+0 -> Goto the first char of the line
+$ -> Goto the last char of the line
+{ -> Goto beginning of the paragraph
+} -> Goto the end of the paragraph
+
+Search and replace:
+/ -> Searches for the word you specify
+n -> Goes to the next searched word
+N -> Goes to the previous searched word
+? -> Searches backwards (don't really understand why it is needed, can use /
+	followed by N)
+nohlsearch -> get rid of the search highlights
+
+
+Replace:
+Goto command mode (:) and enter the keywords like this
+: <<start_line>>,<<end_line>>s/<<find word>>/<<replace word>>/<<keywords>>
+eg
+:1,4s/bacon/brocoli/g
+	Means from line 1, 4 find all the instances of bacon and replace it
+	brocoli and do it multiple times in the same line if required
+:%s/bacon/brocoli/g
+	Means replace bacon with brocoli multiple times in a line across the
+	entire file
