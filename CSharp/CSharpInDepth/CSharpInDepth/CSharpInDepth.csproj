@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1986E3D8-E516-4C69-99BA-928FFF07D5EA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharpInDepth</RootNamespace>
+    <AssemblyName>CSharpInDepth</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\Utils\CastleWindsor\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\..\Utils\CastleWindsor\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Reactive.Core, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Reactive Extensions\v2.0\Binaries\.NETCore\v4.5\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL" />
+    <Reference Include="System.Reactive.Linq, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL" />
+    <Reference Include="System.Reactive.PlatformServices, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL" />
+    <Reference Include="System.Reactive.Providers, Version=2.0.20823.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="10_ExtensionMethods\ExtendStreams.cs" />
+    <Compile Include="11_QueryExpressionsAndLinqToObjects\QueryExpressionsToDotExpression.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\DynamicAddition.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\DynamicIteration.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\DynamicObjectDom.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\DynamicTypeInference.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\ExpandoObjectStudy.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\GuessNumberCorrectly.cs" />
+    <Compile Include="14_DynamicBindingInAStaticLanguage\PythonIntegration.cs" />
+    <Compile Include="12_LinqBeyondCollections\EnumerableRandomExtension.cs" />
+    <Compile Include="12_LinqBeyondCollections\ImplementDummyLinqProvider.cs" />
+    <Compile Include="12_LinqBeyondCollections\IntroToLinqToXml.cs" />
+    <Compile Include="12_LinqBeyondCollections\IntroToRx.cs" />
+    <Compile Include="13_MinorChangesToSimplyCode\VarianceRevisited.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\DissectingAsyncAwait.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\EagerAsyncValidationUsingAnonymousMethods.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\ExceptionHandlingInAsync.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\GetSiteLength.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="15_AsynchronyWithAsyncAwait\InCompletionOrderAsync.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\MakeAwaitThrowAggregateException.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\SelfWrittenAsync.cs" />
+    <Compile Include="15_AsynchronyWithAsyncAwait\WhyPatternBasedAsync.cs" />
+    <Compile Include="5_FastTrackedDelegates\AnonymousDelegateSort.cs" />
+    <Compile Include="5_FastTrackedDelegates\ContraVarianceInDelegates.cs" />
+    <Compile Include="5_FastTrackedDelegates\CovarianceInDelegates.cs" />
+    <Compile Include="5_FastTrackedDelegates\CSharp1EventsSubscription.cs" />
+    <Compile Include="5_FastTrackedDelegates\DifferentScopeCapturedVariables.cs" />
+    <Compile Include="5_FastTrackedDelegates\EventsSubscriptionUsingMethodsGroup.cs" />
+    <Compile Include="5_FastTrackedDelegates\LifeTimeCapturedVariable.cs" />
+    <Compile Include="5_FastTrackedDelegates\MultipleDelegatesCapturedVariables.cs" />
+    <Compile Include="5_FastTrackedDelegates\SimpleCaptureVariable.cs" />
+    <Compile Include="6_ImplementingIteratorsTheEasyWay\CSharp1StyleIterators.cs" />
+    <Compile Include="6_ImplementingIteratorsTheEasyWay\YieldBreakIntroduction.cs" />
+    <Compile Include="6_ImplementingIteratorsTheEasyWay\YieldReturnIntroduction.cs" />
+    <Compile Include="8_CuttingFluffWithASmartCompiler\AnonymousTypes.cs" />
+    <Compile Include="8_CuttingFluffWithASmartCompiler\CompactEventLogger.cs" />
+    <Compile Include="8_CuttingFluffWithASmartCompiler\PropertiesInStruct.cs" />
+    <Compile Include="9_LambdaExpressionsAndExpressionTrees\SimpleExpressionTrees.cs" />
+    <Compile Include="8_CuttingFluffWithASmartCompiler\SimplifiedInitialization.cs" />
+    <Compile Include="9_LambdaExpressionsAndExpressionTrees\SimpleTypeInference.cs" />
+    <Compile Include="Chapter3\GenericListConvertAll.cs" />
+    <Compile Include="Chapter3\GenericPair.cs" />
+    <Compile Include="Chapter3\GenericsCompareAgainstAnother.cs" />
+    <Compile Include="Chapter3\GenericsCompareToDefault.cs" />
+    <Compile Include="Chapter3\GenericsContraVariance.cs" />
+    <Compile Include="Chapter3\GenericsCovariance.cs" />
+    <Compile Include="Chapter3\GenericsEnumeratorImplementation.cs" />
+    <Compile Include="Chapter3\GenericsReflectionConstruction.cs" />
+    <Compile Include="Chapter3\GenericsReflectionMethods.cs" />
+    <Compile Include="Chapter3\GenericsTypeOf.cs" />
+    <Compile Include="Common\ExtensionMethods.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\Study.cs" />
+    <Compile Include="Common\CastleHelper.cs" />
+    <Compile Include="Model\Defect.cs" />
+    <Compile Include="Model\NotificationSubscription.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\SampleData.cs" />
+    <Compile Include="Model\Severity.cs" />
+    <Compile Include="Model\StaticCounter.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserType.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Model\Model.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

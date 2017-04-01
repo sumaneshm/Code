@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLab", "AsyncLab\AsyncLab.csproj", "{5D178790-BAD8-4497-B79E-88056A0F15B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncLabLibrary", "AsyncLabLibrary\AsyncLabLibrary.csproj", "{0BED71D8-5258-49D7-BE4E-404C87B1CE40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BED71D8-5258-49D7-BE4E-404C87B1CE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BED71D8-5258-49D7-BE4E-404C87B1CE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BED71D8-5258-49D7-BE4E-404C87B1CE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BED71D8-5258-49D7-BE4E-404C87B1CE40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D178790-BAD8-4497-B79E-88056A0F15B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D178790-BAD8-4497-B79E-88056A0F15B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D178790-BAD8-4497-B79E-88056A0F15B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D178790-BAD8-4497-B79E-88056A0F15B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
