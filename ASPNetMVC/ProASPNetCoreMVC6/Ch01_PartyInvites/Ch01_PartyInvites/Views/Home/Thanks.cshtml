@@ -1,0 +1,23 @@
+﻿@model Ch01_PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Thanks</title>
+</head>
+<body>
+    <h1>Thank you, @Model.Name</h1>
+    @if (Model.WillAttend.HasValue && Model.WillAttend.Value)
+    {
+        @:It's great that you're coming.
+    }
+    else
+    {
+        @:Sorry to hear that you can't make it
+    }
+    <p>Click <a asp-action="ListResponses">here</a> to see who else is coming!</p>
+</body>
+</html>

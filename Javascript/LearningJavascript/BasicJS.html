@@ -1,0 +1,55 @@
+﻿<html>
+<head>
+    <script>
+        //function SayHello()
+        //{
+        //    document.write("Welcome to Javascript<br>");
+        //    this.GreetMe = function()
+        //    {
+        //        document.write("Good Morning<br>");
+        //    }
+        //}
+
+        //var s = new SayHello();
+        //s.GreetMe();
+
+        function Student(fn, ln)
+        {
+            this.FirstName = fn;
+            this.LastName = ln;
+
+            this.WelcomeMe = function()
+            {
+                document.write("Welcome to Mr." + this.FirstName + " " + this.LastName + "<br>") ;
+            }
+        }
+
+        var s1 = new Student("Sumanesh", "Magarabooshanam");
+        var s2 = new Student("Arun kumar", "Muthaiyan");
+
+        s1.WelcomeMe();
+        s2.WelcomeMe();
+
+        document.write("After change <br>");
+        s1.FirstName = "Suman";
+
+        s1.WelcomeMe();
+        s2.WelcomeMe();
+
+
+        function clickedMe()
+        {
+            d.innerText = "<font color='red'>I have changed you</font>";
+            alert("ALERT");
+            
+        }
+
+    </script>
+</head>
+<body>
+    <div id="d">I am here...</div>
+
+    <input type="button" value="Click Me" onclick="clickedMe()"/>
+
+</body>
+</html>

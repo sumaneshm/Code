@@ -1,0 +1,36 @@
+<html>
+<script>
+
+    //Class created using 'Constructor notation'
+    function Employee(firstName, lastName)
+    {
+
+        this.firstName = firstName ;
+        this.lastName = lastName;
+
+        this.fullName = function ()
+        {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+
+    var e = new Employee("Sumanesh", "Magarabooshanam");
+
+    document.write(e.fullName());
+
+    // Creating an object using literal notation
+    var student =
+    {
+        firstName : "Sumanesh",
+        lastName : "Magarbooshanam",
+
+        getFullName  : function()
+        {
+            return this.firstName + " "  + this.lastName;
+        }
+    }
+
+    document.write(student.getFullName());
+
+</script>
+</html>

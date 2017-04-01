@@ -1,0 +1,48 @@
+<html>
+<script>
+
+    function Student()
+    {
+        this.name = "";
+        this.age = 10;
+
+        this.printMessage = function ()
+        {
+            document.write("Name : " + this.name + ", Age : " + this.age)
+        }
+    }
+
+    var s = new Student();
+    s.name = "Sumanesh";
+    s.age = 34;
+
+    //s.printMessage();
+
+    function validateEmail()
+    {
+
+        var email = document.getElementById("txtEmail");
+        var emailValue = email.value;
+        var emailRegEx = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+
+        email.style.color = "white";
+
+        try {
+            if (emailRegEx.test(emailValue)) {
+                email.style.backgroundColor = "green";
+            }
+            else {
+                email.style.backgroundColor = "red";
+            }
+        } catch(e)
+        {
+            document.write(e.message + "<br/>");
+
+        }
+    }
+</script>
+<body>
+<input type="text" id="txtEmail" onkeyup="validateEmail()"/>
+</body>
+</html>

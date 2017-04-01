@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Dynamic page";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<p>@ViewBag.DisplayText</p>
+
+<form action="/dynamic/goto" method="POST">
+    <input type="text" name="gotoUrl"/>
+    <input type="submit" name="goto"/>
+</form>

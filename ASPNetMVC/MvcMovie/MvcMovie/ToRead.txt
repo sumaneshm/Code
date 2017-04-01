@@ -1,0 +1,8 @@
+http://www.asp.net/web-pages/overview/getting-started/introducing-razor-syntax-(c)
+http://www.asp.net/mvc/tutorials/mvc-4/using-page-inspector-in-aspnet-mvc
+http://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx
+http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx
+http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+http://go.microsoft.com/fwlink/?LinkId=317598
+http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx
