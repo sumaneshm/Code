@@ -1,0 +1,19 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+    <div class="panel-body">
+        <div class="wizard">
+            <a ui-sref=".info" ui-sref-active="active">
+                Basic information
+            </a>
+            <a ui-sref=".marks" ui-sref-active="active">
+                Marks
+            </a>
+            <a ui-sref=".roles" ui-sref-active="active">
+                Roles
+            </a>
+        </div>
+        <div ui-view/>
+    </div>
+</div>

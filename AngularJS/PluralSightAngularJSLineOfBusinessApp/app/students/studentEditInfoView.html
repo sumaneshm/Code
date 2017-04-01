@@ -1,0 +1,74 @@
+<form name="studentForm" class="form-horizontal">
+    <fieldset>
+        <legend>Basic Student Information</legend>
+        <div class="form-group" ng-class="{'has-error':studentForm.inputStudentName.$invalid}">
+            <label for="inputStudentName" class="col-sm-2 control-label">Student Name</label>
+            <div class="col-sm-4">
+                <input id="inputStudentName" name="inputStudentName" required ng-minlength="4" ng-maxlength="50" class="form-control" ng-model="vm.student.Name" type="text" placeholder="Student Name"/>
+            </div>
+            <span class="help-block has-error" >
+                <span ng-messages="studentForm.inputStudentName.$error">
+                    <span ng-message="required">Student Name is mandatory</span>
+                    <span ng-message="minlength">Min of 4 chars</span>
+                    <span ng-message="maxlength">Max of 50 chars</span>
+                </span>
+            </span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':studentForm.inputAge.$invalid && studentForm.inputAge.$dirty}">
+            <label for="inputAge" class="col-sm-2 control-label">Age</label>
+            <div class="col-sm-1">
+                <input id="inputAge" name="inputAge" required type="text" class="form-control"  ng-model="vm.student.Age" placeholder="Age"/>
+            </div>
+            <span class="help-block has-error" >
+                <span ng-show="studentForm.inputAge.$invalid">
+                    Student Age is mandatory
+                </span>
+            </span>
+        </div>
+        <div class="form-group" ng-class="{'has-error':studentForm.inputID.$invalid && studentForm.inputID.$dirty}">
+            <label for="inputID" class="col-sm-2 control-label">ID</label>
+            <div class="col-sm-2">
+                <input id="inputID" ui-mask="99AA99" name="inputID" required type="text" class="form-control"  ng-model="vm.student.ID"/>
+            </div>
+            <span class="help-block has-error" >
+                <span ng-show="studentForm.inputID.$invalid">
+                    Student ID is mandatory
+                </span>
+            </span>
+        </div>
+        <div class="form-group"  ng-class="{'has-error':studentForm.inputDOB.$invalid && studentForm.inputDOB.$dirty}">
+            <label for="inputDOB" class="col-sm-2 control-label">DOB</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control" id="inputDOB" type="text" required is-open="vm.opened" datepicker-popup="MMM dd, yyyy" ng-model="vm.student.DOB"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default">
+                            <i class="glyphicon glyphicon-calendar" ng-click="vm.open($event)"/>
+                        </button>
+                    </span>
+                    <span class="help-block has-error" >
+                        <span ng-show="studentForm.inputDOB.$invalid">
+                            Student DOB is mandatory
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="inputRollNumber" class="col-sm-2 control-label">Roll Number</label>-->
+            <!--<div class="col-sm-1">-->
+                <!--<input id="inputRollNumber" type="text" class="form-control"  ng-model="vm.student.RollNo" placeholder="Roll Number"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="vm.submit(studentForm.$valid)">Save</button>
+                </span>
+                 <span>
+                    <button class="btn btn-default" style="width:80px;margin-right:10px" ng-click="vm.cancel()">Cancel</button>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</form>

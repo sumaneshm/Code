@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Student List</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/toastr.css" rel="stylesheet"/>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/angular.js" ></script>
+    <script src="js/angular-messages.js" ></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ui-utils.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="js/toastr.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/angular-charts.min.js"></script>
+
+    <script src="common/services/common.services.js"></script>
+    <script src="app/app.js"></script>
+    <script src="common/services/studentResource.js"></script>
+    <script src="common/services/studentResourceMock.js"></script>
+    <script src="common/services/studentService.js"></script>
+
+    <script src="app/students/studentListCtrl.js"></script>
+    <script src="app/students/studentDetailCtrl.js"></script>
+    <script src="app/students/studentEditCtrl.js"></script>
+    <script src="app/marks/MarksAnalyticsCtrl.js"></script>
+
+</head>
+<body ng-app="studentsManagement" >
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand" ui-sref="home">Vysya College, Ayodhiyapattinam, Salem</a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="studentsList">Student List</a></li>
+                    <li><a ui-sref="studentEdit.info({rollNo:0})"><i class="glyphicon glyphicon-plus"></i>Add Student</a></li>
+                    <li><a ui-sref="marksAnalytics">Marks Analytics</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div ui-view></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<form class="form-horizontal" name="studentRolesForm">
+    <fieldset>
+        <legend>Student Roles</legend>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="inputRules">Roles</label>
+            <div class="col-md-8">
+                <input class="form-control" id="inputRules" type="text"
+                       placeholder="Student Roles separated by commas"
+                       ng-model="vm.newRoles" />
+            </div>
+            <div class="col-md-1">
+                <button type="button"
+                        class="btn btn-default"
+                        title="Add the specified tags"
+                        ng-click="vm.addRoles()">
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="row col-md-8 col-md-offset-2">
+            <span ng-repeat="role in vm.student.Roles |  orderBy">
+                <button class="btn btn-default"
+                        style="font-size: smaller;margin-bottom: 12px"
+                        ng-click="vm.removeRole($index)">
+                    {{role}}
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right:10px"
+                            type="submit"
+                            ng-click="vm.submit(studentRolesForm.$valid)">
+                        Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel()">
+                        Cancel
+                    </button>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</form>

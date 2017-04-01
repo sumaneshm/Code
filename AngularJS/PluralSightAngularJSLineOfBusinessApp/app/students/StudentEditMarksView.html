@@ -1,0 +1,47 @@
+<form name="studentMarkForm" class="form-horizontal" novalidate xmlns="http://www.w3.org/1999/html">
+    <fieldset>
+        <legend>Student Marks Information</legend>
+        <div ng-repeat="i in [] | range:vm.student.Marks.length">
+            <ng-form name="innerForm">
+            <div class="form-group" ng-class="{'has-error':innerForm.inputMark.$invalid && innerForm.inputMark.$dirty}">
+                <label for="inputMark" class="col-sm-2 control-label">Mark {{i + 1}}</label>
+                <div class="col-sm-4">
+                    <input id="inputMark"  name="inputMark" min="0" max="100" required class="form-control" ng-model="vm.student.Marks[i]" type="number" />
+                </div>
+            <span class="help-block has-error" >
+                <span ng-messages="innerForm.inputMark.$error">
+                    <span ng-message="required">Mark is mandatory</span>
+                    <span ng-message="number">Mark must be a number</span>
+                     <span ng-message="min">Minimum Mark is 0</span>
+                    <span ng-message="max">Maximum Mark is 100</span>
+                </span>
+            </span>
+            </div>
+        </ng-form>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Total:</div>
+            <div class="col-md-6">{{vm.getTotalMarks() | number:0}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Average :</div>
+            <div class="col-md-6">{{vm.getAverage() | number:0.0}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Result :</div>
+            <div class="col-md-6">{{vm.getResult()}}</div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="vm.submit(studentMarkForm.$valid)">Save</button>
+                </span>
+                 <span>
+                    <button class="btn btn-default" style="width:80px;margin-right:10px" ng-click="vm.cancel()">Cancel</button>
+                </span>
+            </div>
+        </div>
+    </fieldset>
+</form>

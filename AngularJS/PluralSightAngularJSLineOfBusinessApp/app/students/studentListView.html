@@ -1,0 +1,29 @@
+<div class="panel panel-primary" ng-controller="StudentListCtrl as vm">
+    <div class="panel-heading" style="font-size: large">Student list</div>
+    <div class="panel-body">
+        <table class="table" border="1">
+            <thead>
+            <tr>
+                <th><button class="btn btn-primary" ng-click="vm.toggleImage()">{{vm.showImage?"Hide":"Show"}} Image</button></th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="stud in vm.students">
+                <td><img ng-if="vm.showImage" ng-src="{{stud.Image}}" width="75px" /></td>
+                <td>
+                    <a ui-sref="studentDetail({rollNo:stud.RollNo})">
+                    {{stud.Name}}
+                    </a>
+                </td>
+                <td>{{stud.Age}}</td>
+                <td>
+                    <a class="btn btn-primary" ui-sref="studentEdit.info({rollNo:stud.RollNo})">Edit</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
