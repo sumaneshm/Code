@@ -1,0 +1,7 @@
+<Page
+	x:Class="EssentialWPF.HelloWorld"
+	xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation'
+	xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml'
+	WindowTitle="Hello World">
+	<TextBlock x:Name="theText" FontSize='24'>Hello 1world</TextBlock>
+</Page>

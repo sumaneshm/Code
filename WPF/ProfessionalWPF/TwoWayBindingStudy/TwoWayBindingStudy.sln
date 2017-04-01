@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoWayBindingStudy", "TwoWayBindingStudy\TwoWayBindingStudy.csproj", "{B2E3E2BF-2C22-420F-B2A4-C1A68F0E823C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2E3E2BF-2C22-420F-B2A4-C1A68F0E823C}.Debug|x86.ActiveCfg = Debug|x86
+		{B2E3E2BF-2C22-420F-B2A4-C1A68F0E823C}.Debug|x86.Build.0 = Debug|x86
+		{B2E3E2BF-2C22-420F-B2A4-C1A68F0E823C}.Release|x86.ActiveCfg = Release|x86
+		{B2E3E2BF-2C22-420F-B2A4-C1A68F0E823C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

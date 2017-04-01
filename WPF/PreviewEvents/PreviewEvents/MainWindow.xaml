@@ -1,0 +1,15 @@
+﻿<Window x:Class="PreviewEvents.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="300"
+        KeyDown="handler" PreviewKeyDown="handler">
+    <DockPanel KeyDown="handler" PreviewKeyDown="handler">
+        <ListBox x:Name="Output" Margin="0 0 10 0" DockPanel.Dock="Left" KeyDown="handler" PreviewKeyDown="handler"/>
+    <Grid KeyDown="handler" PreviewKeyDown="handler">
+            <StackPanel KeyDown="handler" PreviewKeyDown="handler">
+                <Button KeyDown="handler" PreviewKeyDown="handler">My button</Button>
+                <TextBox KeyDown="handler" PreviewKeyDown="handler">My Textbox</TextBox>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

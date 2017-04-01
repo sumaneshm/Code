@@ -1,0 +1,21 @@
+﻿<Window x:Class="C11_CustomBehavior.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:c="clr-namespace:BehaviorLibrary;assembly=BehaviorLibrary"
+        Title="MainWindow" Height="350" Width="525">
+    <Canvas>
+        <Rectangle Canvas.Left="10" Canvas.Top="10" Fill="Yellow" Width="40" Height="60">
+        </Rectangle>
+        <Ellipse Canvas.Left="10" Canvas.Top="70" Fill="Blue" Width="80" Height="60">
+            <i:Interaction.Behaviors>
+                <c:DragInCustomBehavior/>
+            </i:Interaction.Behaviors>
+        </Ellipse>
+        <Ellipse Canvas.Left="80" Canvas.Top="70" Fill="OrangeRed" Width="40" Height="70">
+            <i:Interaction.Behaviors>
+                <c:DragInCustomBehavior/>
+            </i:Interaction.Behaviors>
+        </Ellipse>
+    </Canvas>
+</Window>

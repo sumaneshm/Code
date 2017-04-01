@@ -1,0 +1,9 @@
+﻿<Window x:Class="ImageVisualizerUsage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <!--Image x:Name="theImage"  Source="D:\Aadhavanphotos\138CANON\IMG_3801.JPG"/-->
+        <Button Content="View" Click="Button_Click"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,838 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>.NET Leitcode Barcode Property Settings & Methods</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+
+<link href="main3.css" rel="stylesheet" type="text/css">
+<link rel="SHORTCUT ICON" href="favicon.ico">
+
+<script>
+startList = function() {
+// Required update: if the page has no primary nav, don't do anything, don't give an error.
+if (document.all&&document.getElementById) {
+navRoot = document.getElementById("primarynav");
+if (navRoot) {
+for (i=0; i<navRoot.childNodes.length; i++) {
+node = navRoot.childNodes[i];
+if (node.nodeName=="LI") {
+node.onmouseover=function() {
+this.className+=" over";
+}
+node.onmouseout=function() {
+this.className=this.className.replace(" over", "");
+}
+} } } } }
+</script>
+
+</head>
+<body>
+
+<div class="pHeaderWrap" id="pagetop">
+<div class="pHeaderInnerWrap">
+<div class="pHeaderLWrap">
+<a href="http://www.onbarcode.com/" title="Barcode Generator & Reader SDK - OnBarcode">
+<img title="Barcode Generator & Reader SDK - OnBarcode" alt="Barcode Generator & Reader SDK - OnBarcode" src="logo2.jpg" width=424 height=63 border="0">
+</a>
+</div>
+</div>
+</div>
+
+
+<div  class="pHMenuWrap" id="primary-nav">
+<div class="pHMenuInnerWrap">
+<ul id="primarynav" class=l1>
+<li style="width: 220px;"><a href="http://www.onbarcode.com/" rel="nofollow">OnBarcode Home</a></li>
+<li style="width: 250px;"><a href="http://www.onbarcode.com/products/net_barcode/">About .NET Barcode Generator</a></li>
+<li style="width: 230px;"><a href="http://www.onbarcode.com/purchase/purchase-net-barcode-generator-suite.html" title="Purchase .NET Barcode Generator Suite License" rel="nofollow">Purchase</a></li>
+<li style="width: 230px;"><a href="http://www.onbarcode.com/company/" title="OnBarcode" rel="nofollow">Company</a></li>
+</ul>
+</div>
+</div>
+
+
+
+<div class=pBodyWrap>
+<div class=pBodyInnerWrap>
+<div style="height:213px;padding-left:8px;">
+<div class="banner_left"><img src="banner.gif"></div>
+<div class="banner_right">
+
+<a href="http://www.onbarcode.com/purchase/purchase-net-barcode-generator-suite.html" title="Purchase .NET Barcode Generator Suite License Online" rel="nofollow"><img class="hBtn" src="btn_purchase.gif" border="0"></a>
+<a href="http://www.onbarcode.com/support/" title="Sales & technical supports from OnBarcode" rel="nofollow"><img class="hBtn" src="btn_support.gif" border="0"></a>
+</div>
+</div>
+<div style="height:13px;padding-left:8px;"><img src="banner_shadow.png"></div>
+
+<div class="page_navigator"; style="padding-left:8px;">
+<ul id="breadcrumb">
+<li><a href="../Developer_Guide.html" title=".NET Barcode Generator Suite Developer Guide">.NET Barcode Generation Guide</a> &gt; </li>
+<li>Leitcode Barcode Generation in .NET</li>
+</ul>
+</div>
+<br/>
+
+
+<div class="ob_dp_arttitle">
+	.NET Leitcode Barcode Property Settings & Methods
+</div>
+<br/><br/>
+
+
+<div class="ob_dp_quickjump">
+	<div class="ob_dp_quickjump_btn">
+		<div class="ob_quickjump_property"></div><a href="#s1">Leitcode Properties</a>
+	</div>
+	<div class="ob_dp_quickjump_btn">
+		<div class="ob_quickjump_property"></div><a href="#s2">Properties in C# or VB.NET</a>
+	</div>
+	<div class="ob_dp_quickjump_btn">
+		<div class="ob_quickjump_property"></div><a href="#s3">Supported Barcode Types</a>
+	</div>
+	<div class="ob_quickjump_shadow"></div>
+</div>
+
+
+<div class="ob_dp_subTitleCon" id="s1">
+.NET Leitcode Property Settings & Methods
+<a href="#pagetop"><div class="ob_top"><img src="top.jpg" width="8" height="6" border="0" alt="">Top</div></a>
+</div>
+
+<table class="props" width=94% padding=0>
+			<tr class="propsHead">
+				<td width=60px><b>Category</b></td>
+				<td width=180px><b>Properties</b></td>
+				<td width=160px><b>Value</b></td>
+				<td><b>Comments</b></td>
+			</tr>
+			<tr class="odd">
+				<td rowspan=3 class=cat>Basic
+				</td>
+				<td>Property: <b>Data</b>
+					<br/>
+				    URL: DATA
+				</td>
+				<td>Type: string
+					<br/>
+				    Default: "12345"
+			        </td>
+				<td>Barcode value to encode.
+					<br/><br/>
+				    Leitcode Valid Data Char Set:
+				    	<br/>
+				    	<ul class=propsul>
+						<li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (Digits)
+					</ul>
+				    	<br/>
+				    Leitcode Valid data length: 
+					<br/>
+				    	<ul class=propsul>
+						<li>13 digits only, excluding the last checksum digit
+					</ul>
+					<br/>
+				</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>Type</b>
+					<br/>
+				    URL: TYPE
+				</td>
+				<td>
+					Type: BarcodeType
+					<br/>
+					Default: CODE128 (7)
+				</td>
+				<td>Linear barcode symbology type. 
+				<br/><br/>
+				Set the value to <b>BarcodeType.LEITCODE</b>.
+					<br/><br/>
+				    Leitcode type value is <b>BarcodeType.LEITCODE</b> (26).
+				</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>AddCheckSum</b>
+					<br/>
+				    URL: ADD-CHECK-SUM
+				</td>
+				<td>
+					Type: bool
+					<br/>
+					Default: false
+				</td>
+				<td>AddCheckSum property is not applied here. .NET Barcode will always add a check character in the last digit. </td>
+			</tr>
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>	
+			<tr class="odd">
+				<td class=cat>Leitcode<br/>Special</td>
+				<td>Property: <b>N</b>
+					<br/>
+				    URL: N
+				</td>
+				<td>
+					Type: float
+					<br/>
+					Default: 2.0f
+				</td>
+				<td>Wide/narrow ratio, 2.0 - 3.0 inclusive, default is 2.
+				</td>
+			</tr>
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			
+			<tr class="odd">
+				<td rowspan=13 class=cat>Barcode<br/>Size<br/>Related</td>
+				<td>
+					Property: <b>AutoResize</b>
+					<br/>
+				    URL: AUTO-RESIZE
+				</td>
+				<td>
+					Type: bool
+					<br/>
+					Default: false
+				</td>
+				<td>Auto resize the generated barcode image.
+				</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>BarAlignment</b>
+					<br/>
+				    URL: BAR-ALIGNMENT
+				</td>
+				<td>
+					Type: int
+					<br/>
+					Default: 1 (center)
+				</td>
+				<td>Barcode horizontal alignment inside the image. 0: left, 1: center, 2: right.</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>UOM</b>
+					<br/>
+				    URL: UOM
+				</td>
+				<td>
+					Type: UnitOfMeasure
+					<br/>
+					Default: PIXEL (0)
+				</td>
+				<td>Unit of meature for all size related settings in the library.
+					<br/><br/>
+					Valid values: 
+					<ul class=propsul>
+						<li>UnitOfMeasure.PIXEL (0)
+						<li>UnitOfMeasure.CM (1)
+						<li>UnitOfMeasure.INCH (2)
+					</ul>					
+				</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>X</b>
+					<br/>
+				    URL: X
+				</td>
+				<td>
+					Type: float
+					<br/>
+					Default: 1
+				</td>
+				<td>Width of barcode bar module (narrow bar), default is 1 pixel.</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>Y</b>
+					<br/>
+				    URL: Y
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 60
+				</td>
+				<td>Height of barcode bar module, default is 60 pixel.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>BarcodeWidth</b>
+					<br/>
+				    URL: BARCODE-WIDTH
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image width. 
+				<br/><br/>
+				If barcodeWidth setting is smaller than the barcode required minimum width, the library will automatically reset to barcode minimum width.</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>BarcodeHeight</b>
+					<br/>
+				    URL: BARCODE-HEIGHT
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image height. 
+				<br/><br/>
+				If barcodeHeight setting is smaller than the barcode required minimum height, the library will automatically reset to barcode minimum height.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>LeftMargin</b>
+					<br/>
+				    URL: LEFT-MARGIN
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image left margin size.</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>RightMargin</b>
+					<br/>
+				    URL: RIGHT-MARGIN
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image right margin size.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>TopMargin</b>
+					<br/>
+				    URL: TOP-MARGIN
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image top margin size.</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>BottomMargin</b>
+					<br/>
+				    URL: BOTTOM-MARGIN
+				</td>
+				<td>Type: float
+					<br/>
+					Default: 0
+				</td>
+				<td>Barcode image bottom margin size.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>Resolution</b>
+					<br/>
+				    URL: RESOLUTION
+				</td>
+				<td>Type: int
+					<br/>
+					Default: 72
+				</td>
+				<td>Barcode image resolution in DPI (Dots per inch).</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>Rotate</b>
+					<br/>
+				    URL: ROTATE
+				</td>
+				<td>
+					Type: Rotate
+					<br/>
+					Default: Rotate0 (0)
+				</td>
+				<td>Valid values: 
+				    <br/><br/>
+				    <ul class=propsul>
+				    	<li>Rotate.Rotate0 (0)
+				    	<li>Rotate.Rotate90 (1)
+				    	<li>Rotate.Rotate180 (2)
+				    	<li>Rotate.Rotate270 (3)
+				    </ul>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+				<td rowspan=2 class=cat>Barcode<br/>Colors</td>
+				<td>
+					Property: <b>BackColor</b>
+					<br/>
+				    URL: BACK-COLOR
+				</td>
+				<td>
+					Type: Color
+					<br/>
+					Default: white
+				</td>
+				<td>Barcode image background color.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>ForeColor</b>
+					<br/>
+				    URL: FORE-COLOR
+				</td>
+				<td>
+					Type: Color
+					<br/>
+					Default: black
+				</td>
+				<td>Barcode image foreground color.
+				</td>
+			</tr>
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+				<td rowspan=4 class=cat>Font<br/>Style</td>
+				<td>
+					Property: <b>ShowText</b>
+					<br/>
+				    URL: SHOW-TEXT
+				</td>
+				<td>
+					Type: bool
+					<br/>
+					Default: true
+				</td>
+				<td>If true, display barcode data text under the barcode, otherwise do not display.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>TextFont</b>
+					<br/>
+				    URL: TEXT-FONT
+				</td>
+				<td>
+					Type: Font
+					<br/>
+					Default: <br/>new Font("Arial", 9f, FontStyle.Regular)
+				</td>
+				<td>Barcode text font style.
+				    <br/><br/>
+				    In ASP.NET web streaming, using the url paramter in the following format: 
+				    <br/>&TEXT-FONT=Arial|9|regular
+				</td>
+			</tr>
+			<tr class="odd">
+				<td>
+					Property: <b>TextMargin</b>
+					<br/>
+				    URL: TEXT-MARGIN
+				</td>
+				<td>
+					Type: float
+					<br/>
+					Default: 6
+				</td>
+				<td>Space between barcode and barcode data text, default is 6 pixel.</td>
+			</tr>
+			<tr class="even">
+				<td>
+					Property: <b>TextColor</b>
+					<br/>
+				    URL: TEXT-COLOR
+				</td>
+				<td>
+					Type: Color
+					<br/>
+					Default: black
+				</td>
+				<td>Barcode text color.
+				</td>
+			</tr>
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+				<td class=cat>Image<br/>Format</td>
+				<td>
+					Property: <b>Format</b>
+					<br/>
+				    URL: FORMAT
+				</td>
+				<td>
+					Type: ImageFormat
+					<br/>
+					Default: Png
+				</td>
+				<td>Barcode image encoding type. </td>
+			</tr>
+			
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			<tr class="odd">
+				<td class=cat>Methods</td>
+				<td colspan=3>
+
+<pre class="csharpcode">
+<span class="rem">// generate barcode and encode to image file</span>
+<span class="kwrd">public</span> <span class="kwrd">void</span> drawBarcode(<span class="kwrd">string</span> filename)
+
+<span class="rem">// generate barcode and paint on Graphics object</span>
+<span class="kwrd">public</span> <span class="kwrd">void</span> drawBarcode(Graphics graphics)
+
+<span class="rem">// generate barcode and paint on Bitmap object</span>
+<span class="kwrd">public</span> Bitmap drawBarcode()
+
+<span class="rem">// generate barcode and paint on Stream object</span>
+<span class="kwrd">public</span> <span class="kwrd">void</span> drawBarcode(Stream fileStream)
+
+<span class="rem">// generate barcode and paint on byte[] object</span>
+<span class="kwrd">public</span> <span class="kwrd">byte</span>[] drawBarcodeAsBytes()</pre>
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan=100>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan=100><i>In WebStream query string, please use int value for Enums, "true" and "false" for bool.</i>				
+				</td>
+			</tr>
+			</table>
+<br/>
+
+
+
+
+<div class="ob_dp_subTitleCon" id="s2">
+Leitcode Properties in Visual C#
+<a href="#pagetop"><div class="ob_top"><img src="top.jpg" width="8" height="6" border="0" alt="">Top</div></a>
+</div>
+
+<p class="subTC">
+				<b>Generating barcode Leitcode in <b>C#</b> Class example</b>
+			</p>
+
+<pre class="csharpcode">
+	<span class="kwrd">using</span> System;
+	<span class="kwrd">using</span> System.Collections.Generic;
+	<span class="kwrd">using</span> System.Text;
+	<span class="kwrd">using</span> System.Drawing;
+	<span class="kwrd">using</span> OnBarcode.Barcode;
+
+
+	Linear barcode = <span class="kwrd">new</span> Linear();
+	
+	<span class="rem">// Leitcode Barcode Basic Settings</span>
+	barcode.Type = BarcodeType.LEITCODE;
+	
+	<span class="rem">/*</span>
+	<span class="rem">   Leitcode Valid data char set:</span>
+	<span class="rem">            0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (Digits)</span>
+	<span class="rem"></span>
+	<span class="rem">   Leitcode Valid data length: 13 digits only, excluding the last checksum digit</span>
+	<span class="rem">*/</span>
+	barcode.Data = <span class="str">"0123456789012"</span>;
+	
+	<span class="rem">// Leitcode Wide Narrow bar Ratio</span>
+	<span class="rem">// Valid value is from 2.0 to 3.0 inclusive.</span>
+	barcode.N = 3.0f;
+	
+	<span class="rem">// Barcode Size Related Settings</span>
+	barcode.UOM = UnitOfMeasure.PIXEL;
+	barcode.X = 1;
+	barcode.Y = 80;
+	barcode.LeftMargin = 0;
+	barcode.RightMargin = 0;
+	barcode.TopMargin = 0;
+	barcode.BottomMargin = 0;
+	barcode.Resolution = 96;
+	barcode.Rotate = Rotate.Rotate0;
+	
+	<span class="rem">// Barcode Text Settings</span>
+	barcode.ShowText = <span class="kwrd">true</span>;
+	barcode.TextFont = <span class="kwrd">new</span> Font(<span class="str">"Arial"</span>, 9f, FontStyle.Regular);
+	barcode.TextMargin = 6;
+	
+	<span class="rem">// Image format setting</span>
+	barcode.Format = System.Drawing.Imaging.ImageFormat.Gif;
+	
+	barcode.drawBarcode(<span class="str">"c://leitcode.gif"</span>);<br/>
+	</pre>
+
+
+
+<div class="ob_dp_subTitleCon" id="s2">
+Leitcode Properties in Visual Basic.NET
+<a href="#pagetop"><div class="ob_top"><img src="top.jpg" width="8" height="6" border="0" alt="">Top</div></a>
+</div>
+
+<p class="subTC">
+				<b>Generating barcode Leitcode in <b>VB.NET</b> Class example</b>
+			</p>
+
+<pre class="csharpcode">
+	<span class="kwrd">Imports</span> OnBarcode.Barcode
+
+
+	<span class="kwrd">Dim</span> barcode <span class="kwrd">As</span> Linear = <span class="kwrd">New</span> Linear
+	
+	<span class="rem">' Leitcode Barcode Basic Settings</span>
+	barcode.Type = BarcodeType.LEITCODE
+	
+	<span class="rem">'   Leitcode Valid data char set:</span>
+	<span class="rem">'        0, 1, 2, 3, 4, 5, 6, 7, 8, 9 (Digits)</span>
+	
+	<span class="rem">'   Leitcode Valid data length: 13 digits only, excluding the last checksum digit</span>
+	barcode.Data = <span class="str">"0123456789012"</span>
+	
+	<span class="rem">' Leitcode Wide Narrow bar Ratio</span>
+	<span class="rem">' Valid value is from 2.0 to 3.0 inclusive.</span>
+	barcode.N = 3.0F
+	
+	<span class="rem">' Barcode Size Related Settings</span>
+	barcode.UOM = UnitOfMeasure.PIXEL
+	barcode.X = 1
+	barcode.Y = 80
+	barcode.LeftMargin = 0
+	barcode.RightMargin = 0
+	barcode.TopMargin = 0
+	barcode.BottomMargin = 0
+	barcode.Resolution = 96
+	barcode.Rotate = Rotate.Rotate0
+	
+	<span class="rem">' Barcode Text Settings</span>
+	barcode.ShowText = <span class="kwrd">True</span>
+	barcode.TextFont = <span class="kwrd">New</span> Drawing.Font(<span class="str">"Arial"</span>, 9.0F, Drawing.FontStyle.Regular)
+	barcode.TextMargin = 6
+	
+	<span class="rem">' Image format setting</span>
+	barcode.Format = System.Drawing.Imaging.ImageFormat.Gif()
+	
+	barcode.drawBarcode(<span class="str">"c://leitcode.gif"</span>)<br/>
+	</pre>
+
+
+
+
+<div class="ob_dp_subTitleCon" id="s3">
+.NET Barcode Generator Supported Barcode Types
+<a href="#pagetop"><div class="ob_top"><img src="top.jpg" width="8" height="6" border="0" alt="">Top</div></a>
+</div>
+
+
+<h3 class="subTitle">Barcode for .NET - Bar Code Types Generation</h3>
+<ul class=prodlist>
+<li>1D / Linear Barcodes:
+<table width=100% class="ob_linear_barcodes">
+<tr>
+<td><a href="type_codabar.html" title="Codabar Properties in .NET">Codabar</a></td>
+<td><a href="type_code_11.html" title="Code 11 Properties in .NET">Code 11</a></td>
+<td><a href="type_code_2_of_5.html" title="Code 2 of 5 Properties in .NET">Code 2 of 5</a></td>
+<td><a href="type_code_39.html" title="Code 39 Properties in .NET">Code 39</a></td>
+<td><a href="type_code_93.html" title="Code 93 Properties in .NET">Code 93</a></td>
+</tr>
+
+<tr>
+<td><a href="type_code_128.html" title="Code 128 Properties in .NET">Code 128</a></td>
+<td><a href="type_ean8.html" title="EAN-8 Properties in .NET">EAN-8</a></td>
+<td><a href="type_ean13.html" title="EAN-13 Properties in .NET">EAN-13</a></td>
+<td><a href="type_ean_128.html" title="EAN-128/GS1-128 Properties in .NET">EAN 128 (GS1-128)</a></td>
+<td><a href="type_gs1_databar.html" title="GS1 DataBar Properties in .NET">GS1 DataBar</a></td>
+</tr><tr><td><a href="type_identcode.html" title="Identcode Properties in .NET">Identcode</a></td>
+
+
+
+<td><a href="type_onecode.html" title="Intelligent Mail Barcode (OneCode) Properties in .NET">Intelligent Mail(OneCode)</a></td>
+<td><a href="type_interleaved_2_of_5.html" title="Interleaved 2 of 5 Properties in .NET">Interleaved 2 of 5</a></td>
+<td><a href="type_isbn.html" title="ISBN Properties in .NET">ISBN</a></td>
+<td><a href="type_issn.html" title="ISSN Properties in .NET">ISSN</a></td>
+</tr>
+
+<tr><td><a href="type_itf14.html" title="ITF-14 Properties in .NET">ITF-14</a></td>
+
+<td><a href="type_leitcode.html" title="Leitcode Properties in .NET">Leitcode</a></td>
+<td><a href="type_msi.html" title="MSI Plessey Properties in .NET">MSI Plessey</a></td>
+<td><a href="type_planet.html" title="PLANET Properties in .NET">PLANET</a></td>
+<td><a href="type_postnet.html" title="POSTNET Properties in .NET">POSTNET</a></td>
+</tr>
+
+<tr><td><a href="type_rm4scc.html" title="RM4SCC Properties in .NET">RM4SCC</a></td>
+
+<td><a href="type_upca.html" title="UPC-A Properties in .NET">UPC-A</a></td>
+<td><a href="type_upce.html" title="UPC-E Properties in .NET">UPC-E</a></td>
+<td></td>
+<td></td>
+
+</tr>
+</table>
+<i>Support supplement 2, 5 digits for UPC/EAN barcodes</i>
+<br/><br/>
+</li>
+<li>2D / Matrix Barcodes:
+<a href="type_data_matrix.html" title="Data Matrix Properties in .NET">Data Matrix</a>,
+<a href="type_pdf417.html" title=".PDF 417 Properties in .NET">PDF 417</a>,
+<a href="type_qrcode.html" title="QR Code Properties in .NET">QR Code</a>,
+<a href="type_microqrcode.html" title="Micro QR Code Properties in .NET">Micro QR Code</a>,
+<a href="type_micropdf417.html" title="Micro PDF-417 Properties in .NET">Micro PDF-417</a><br/>
+</li>
+</ul>
+
+<br/><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div class="pFooterWrap siteDirBottom" style="height:310px;">
+<div class=pFooterInnerWrap>
+<div class=pFooterContWrap id="siteDirCont">
+<div class=siteDir style="width:250px;">
+<ul>
+<li>Barcode SDK Guide
+<li><a href="http://www.onbarcode.com/tutorial/net-barcode-generation.html" title="Generate barcodes in .NET">Generate barcode in .NET</a></li>
+<li><a href="http://www.onbarcode.com/tutorial/asp-net-barcode-generation.html" title="Generate barcode in ASP.NET">Generate barcode in ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/tutorial/csharp-barcode-generation.html" title="Generate barcode in C#.NET">Generate barcode in C#</a></li>
+<li><a href="http://www.onbarcode.com/tutorial/java-barcode-generation.html" title="Generate barcode in Java">Generate barcode in Java</a></li>
+<li><a href="http://www.onbarcode.com/tutorial/vb-net-barcode-generation.html" title="Generate barcode in VB.NET">Generate barcode in VB.NET</a></li>
+<br/><br/>
+<li>Barcode Data Matrix
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/data_matrix.html" title="Generate Data Matrix .NET">Data Matrix for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/data-matrix-generator.html" title="Generate Data Matrix ASP.NET">Data Matrix for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/data-matrix-generator.html" title="Generate Data Matrix C#">Data Matrix for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/data_matrix.html" title="Generate Data Matrix Excel">Data Matrix for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/data_matrix.html" title="Generate Data Matrix Java">Data Matrix for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/data-matrix-generator.html" title="Generate Data Matrix VB.NET">Data Matrix for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/data_matrix.html" title="Generate Data Matrix Word">Data Matrix for Word</a></li>
+</ul>
+</div>
+<div class=siteDir style="width:200px;">
+<ul>
+<li>Barcode QR-Code
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/qrcode.html" title="Generate QR Code .NET">QR Code for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/qr-code-generator.html" title="Generate QR Code ASP.NET">QR Code for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/qr-code-generator.html" title="Generate QR Code C#">QR Code for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/qrcode.html" title="Generate QR Code Excel">QR Code for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/qrcode.html" title="Generate QR Code Java">QR Code for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/qr-code-generator.html" title="Generate QR Code VB.NET">QR Code for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/qrcode.html" title="Generate QR Code Word">QR Code for Word</a></li>
+<br/><br/>
+<li>Barcode PDF-417
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/pdf417.html" title="Generate PDF-417 .NET">PDF-417 for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/pdf-417-generator.html" title="Generate PDF-417 ASP.NET">PDF-417 for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/pdf-417-generator.html" title="Generate PDF-417 C#">PDF-417 for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/pdf417.html" title="Generate PDF-417 Excel">PDF-417 for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/pdf417.html" title="Generate PDF-417 Java">PDF-417 for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/pdf-417-generator.html" title="Generate PDF-417 VB.NET">PDF-417 for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/pdf417.html" title="Generate PDF-417 Word">PDF-417 for Word</a></li>
+</ul>
+</div>
+<div class=siteDir style="width:200px;">
+<ul>
+<li>Barcode Code 128
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/code_128.html" title="Generate Code 128 .NET">Code 128 for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/code-128-generator.html" title="Generate Code 128 ASP.NET">Code 128 for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/code-128-generator.html" title="Generate Code 128 C#">Code 128 for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/code_128.html" title="Generate Code 128 Excel">Code 128 for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/code_128.html" title="Generate Code 128 Java">Code 128 for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/code-128-generator.html" title="Generate Code 128 VB.NET">Code 128 for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/code_128.html" title="Generate Code 128 Word">Code 128 for Word</a></li>
+<br/><br/>
+<li>Barcode Code 39
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/code_39.html" title="Generate Code 39 .NET">Code 39 for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/code-39-generator.html" title="Generate Code 39 ASP.NET">Code 39 for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/code-39-generator.html" title="Generate Code 39 C#">Code 39 for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/code_39.html" title="Generate Code 39 Excel">Code 39 for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/code_39.html" title="Generate Code 39 Java">Code 39 for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/code-39-generator.html" title="Generate Code 39 VB.NET">Code 39 for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/code_39.html" title="Generate Code 39 Word">Code 39 for Word</a></li>
+</ul>
+</div>
+<div class=siteDir style="width:200px;">
+<ul>
+<li>Barcode EAN
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/ean13.html" title="Generate EAN .NET">EAN for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/ean-13-generator.html" title="Generate EAN ASP.NET">EAN for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/ean-13-generator.html" title="Generate EAN C#">EAN for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/ean13.html" title="Generate EAN Excel">EAN for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/ean13.html" title="Generate EAN Java">EAN for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/ean-13-generator.html" title="Generate EAN VB.NET">EAN for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/ean13.html" title="Generate EAN Word">EAN for Word</a></li>
+<br/><br/>
+<li>Barcode UPC
+<li><a href="http://www.onbarcode.com/products/net_barcode/barcodes/upca.html" title="Generate UPC .NET">UPC for .NET</a></li>
+<li><a href="http://www.onbarcode.com/asp_net/upc-a-generator.html" title="Generate UPC ASP.NET">UPC for ASP.NET</a></li>
+<li><a href="http://www.onbarcode.com/csharp/upc-a-generator.html" title="Generate UPC C#">UPC for C#</a></li>
+<li><a href="http://www.onbarcode.com/excel_barcode/upca.html" title="Generate UPC Excel">UPC for Excel</a></li>
+<li><a href="http://www.onbarcode.com/products/java_barcode/barcodes/upca.html" title="Generate UPC Java">UPC for Java</a></li>
+<li><a href="http://www.onbarcode.com/vb_net/upc-a-generator.html" title="Generate UPC VB.NET">UPC for VB.NET</a></li>
+<li><a href="http://www.onbarcode.com/word_barcode/upca.html" title="Generate UPC Word">UPC for Word</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="pFooterWrap corpInfo">
+<div class=pFooterInnerWrap>
+<div class=pFooterContWrap>
+OnBarcode is a market-leading provider of barcode generator, reader controls and components for ASP.NET, Windows Forms, WPF,
+as well Java, Android, iOS (iPhone, iPad) across all major enterprise development platforms.
+We provides high quality tutorials and guides for various linear, 2d barcode information, such as
+C# Barcode,
+QR Code C#,
+QR Code VB.NET,
+QR Code ASP.NET,
+QR Code .NET.
+Combined with its major
+<a href="http://www.onbarcode.com/info/datamatrix-create-imaging-doc.html">reporting barcode tools</a> as well as its Microsoft Office (Excel & Word) barcode add-on, barcode fonts,
+OnBarcode offers comprehensive
+<a href="http://www.onbarcode.com/info/qrcode-print-imaging-doc.html">barcode solution</a> for building business applications.
+OnBarcode products help thousands of companies be more productive and deliver
+<a href="http://www.onbarcode.com/info/barcode-generate-imaging-quality.html">high quality bar code automation products</a> under budget and on time.
+</div>
+</div>
+</div>
+<div class="pFooterWrap companyTerm">
+<div class=pFooterInnerWrap>
+<div class=pFooterContWrap>
+<a href="http://www.onbarcode.com/terms/terms-of-use.html" rel="nofollow">Terms of Use</a> |
+<a href="http://www.onbarcode.com/terms/privacy-policy.html" rel="nofollow">Privacy Policy</a>
+<br/>
+Copyright &copy; OnBarcode.com  <script type="text/javascript">
+document.write(new Date().getFullYear());
+</script>. All rights reserved.
+</div>
+</div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,14 @@
+﻿<Window x:Class="C17_ExamineWPFControlTemplates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox SelectionChanged="lstControls_SelectionChanged" Grid.Column="0" Name="lstControls" Width="200"/>
+        <TextBlock Grid.Column="1" Name="txtControlTemplate"/>
+    </Grid>
+</Window>

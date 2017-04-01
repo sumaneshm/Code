@@ -1,0 +1,71 @@
+﻿<Window x:Class="C18_LookLessUserControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:C18_LookLessUserControl"
+        Title="MainWindow" Height="335" Width="525">
+    <Window.Resources>
+        <ControlTemplate x:Key="MyStyle" >
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider Name="PART_RedSlider" Orientation="Vertical" Grid.Column="1" Minimum="1" Maximum="255"/>
+                <Slider Name="PART_GreenSlider" Orientation="Vertical" Grid.Column="2" Minimum="1" Maximum="255"/>
+                <Slider Name="PART_BlueSlider" Orientation="Vertical" Grid.Column="3" Minimum="1" Maximum="255"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <Ellipse Width="50" Height="50">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <!--Rectangle Margin="10" Width="50" Height="50">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Ellipse Width="50" Height="50">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Rectangle Margin="10" Width="50" Height="50">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Ellipse Width="50" Height="50">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Rectangle Margin="10" Width="50" Height="50">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Ellipse Width="50" Height="50">
+                        <Ellipse.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color,RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse-->
+                </StackPanel>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <Label HorizontalAlignment="Center" Name="lblColor"/>
+        <my:ColorPicker Template="{StaticResource ResourceKey=MyStyle}" ColorChanged="cp_ColorChanged"  BorderThickness="2" Color="Red" BorderBrush="Black" x:Name="cp" />
+        <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Horizontal">
+            <Button Name="btnReset" Margin="0 0 10 0" Click="btnReset_Click" Content="Reset" Width="100"/>
+            <Button Name="btnUndo" Content="Undo" Command="Undo" CommandTarget="{Binding ElementName=cp}" Width="100"/>
+        </StackPanel>
+        <my:ColorPicker  ColorChanged="cp_ColorChanged"  BorderThickness="2" Color="Red" BorderBrush="Black" x:Name="cp1" />
+    </StackPanel>
+</Window>

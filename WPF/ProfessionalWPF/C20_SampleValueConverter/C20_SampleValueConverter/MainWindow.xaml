@@ -1,0 +1,50 @@
+﻿<Window x:Class="C20_SampleValueConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="mainWindow"
+        xmlns:local="clr-namespace:C20_SampleValueConverter"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:MyValueConverter x:Key="VC" StudentColor="Red" TeacherColor="Blue" />
+        <DataTemplate x:Key="itemsTemplate">
+            <!--<Border Width="120"
+                    Height="50"
+                    CornerRadius="10"
+                    Margin="4 0 4 0"
+                    Background="{Binding Path=MyType, Converter={StaticResource ResourceKey=VC}}"
+                    Padding="4">-->
+                <Grid Width="Auto" Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="39.942"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Center"
+                 Margin="0,0,0,0"
+                 VerticalAlignment="Center"
+                 Grid.Column="1"
+                 FontSize="14"
+                 FontWeight="Bold"
+                 Foreground="{Binding Path=MyType, Converter={StaticResource ResourceKey=VC}}"
+                 TextWrapping="Wrap"
+                 Text="{Binding Title}"
+                 />
+                </Grid>
+           
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <ItemsControl Grid.Column="1"
+              Grid.Row="0"
+              Width="Auto"
+              Height="Auto"
+              ItemsSource="{Binding ElementName=mainWindow, Path=DataItems}"
+              ItemTemplate="{StaticResource itemsTemplate}"
+              Grid.ColumnSpan="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </StackPanel>
+</Window>

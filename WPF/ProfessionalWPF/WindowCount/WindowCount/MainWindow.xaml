@@ -1,0 +1,11 @@
+﻿<Window x:Class="WindowCount.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <Button Padding="10" Width="200" Name="btnCreateDocument" Click="btnCreateDocument_Click" Content="Create Document"/>
+            <Button Padding="10" Width="200" Name="btnUpdateAll" Click="btnUpdateAll_Click" Content="Update"/>
+        </StackPanel>
+    </Grid>
+</Window>

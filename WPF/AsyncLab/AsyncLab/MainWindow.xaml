@@ -1,0 +1,11 @@
+﻿<Window x:Class="AsyncLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Width="640" Height="480">
+        <Grid>
+            <TextBox Height="379" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBox1" VerticalAlignment="Top" Width="294" />
+            <ListBox Height="379" HorizontalAlignment="Right" Margin="0,12,12,0" Name="listBox1" VerticalAlignment="Top" Width="294" />
+            <Button Content="Start" Height="23" HorizontalAlignment="Left" 
+            Margin="272,406,0,0" Name="startButton" VerticalAlignment="Top" Width="75" Click="startButton_Click" />
+        </Grid>
+</Window>

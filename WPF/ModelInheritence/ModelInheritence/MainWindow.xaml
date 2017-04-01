@@ -1,0 +1,23 @@
+﻿<Window x:Class="ModelInheritence.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ModelInheritence="clr-namespace:ModelInheritence"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+            <DataTemplate DataType="{x:Type ModelInheritence:DerivedClass}">
+                <ModelInheritence:DerivedClassView />
+            </DataTemplate>
+        <ModelInheritence:TypeToVisibilityConverter
+            x:Key="dericonv"
+            TypeToCheck="{x:Type ModelInheritence:DerivedClass}"/>
+        <ModelInheritence:TypeToVisibilityConverter
+            x:Key="studentconv"
+            TypeToCheck="{x:Type ModelInheritence:StudentDerivedClass}"/>
+    </Window.Resources>
+    <StackPanel>
+        <ModelInheritence:DerivedClassView x:Name="myControl1" Visibility="{Binding Converter={StaticResource dericonv}}"/>
+        <ModelInheritence:StudentView x:Name="myControl2" Visibility="{Binding Converter={StaticResource studentconv}}"/>
+        <Button Content="Go 1" Click="Button_Click"/>
+        <Button Content="Go 2 " Click="Button_Click_1"/>
+        <Button Content="Go 3 " Click="Button_Click_2"/>
+    </StackPanel>
+</Window>

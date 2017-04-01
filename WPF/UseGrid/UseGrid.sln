@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseGrid", "UseGrid\UseGrid.csproj", "{C93A8182-70B6-40F6-A2E8-D3E2420644A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C93A8182-70B6-40F6-A2E8-D3E2420644A6}.Debug|x86.ActiveCfg = Debug|x86
+		{C93A8182-70B6-40F6-A2E8-D3E2420644A6}.Debug|x86.Build.0 = Debug|x86
+		{C93A8182-70B6-40F6-A2E8-D3E2420644A6}.Release|x86.ActiveCfg = Release|x86
+		{C93A8182-70B6-40F6-A2E8-D3E2420644A6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

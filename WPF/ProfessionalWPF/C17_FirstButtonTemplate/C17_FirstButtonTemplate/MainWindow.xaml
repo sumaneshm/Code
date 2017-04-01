@@ -1,0 +1,67 @@
+﻿<Window x:Class="C17_FirstButtonTemplate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
+            <Border Name="theBorder" BorderBrush="OrangeRed" Background="Yellow" CornerRadius="3" TextBlock.Foreground="Blue" BorderThickness="3">
+                <Grid>
+                    <Rectangle Name="FocusCue" Visibility="Hidden" Stroke="Black"
+                            StrokeThickness="1" StrokeDashArray="1 2"
+                            SnapsToDevicePixels="True"/>
+                    <ContentPresenter Margin="{TemplateBinding Padding}"   RecognizesAccessKey="True"/>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="theBorder" Property="Background" Value="Blue"/>
+                    <Setter TargetName="theBorder" Property="TextBlock.Foreground" Value="White"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="theBorder" Property="Background" Value="Black"/>
+                    <Setter TargetName="theBorder" Property="Opacity" Value="0.3"/>
+                    <Setter TargetName="theBorder" Property="TextBlock.Foreground" Value="White"/>
+                </Trigger>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter TargetName="FocusCue" Property="Visibility" Value="Visible"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="theBorder" Property="TextBlock.Foreground" Value="Gray"/>
+                    <Setter TargetName="theBorder" Property="Background" Value="MistyRose"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="AnimatedButtonTemplate" TargetType="{x:Type Button}">
+            <Border Name="theBorder" BorderBrush="BlueViolet" Background="Bisque" TextBlock.Foreground="Chartreuse" BorderThickness="2">
+                <ContentPresenter/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="theBorder" 
+                                            Storyboard.TargetProperty="Background.Color"
+                                            To="Red" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="theBorder"
+                                        Storyboard.TargetProperty="Background.Color"
+                                        To="Bisque" Duration="0:0:2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <StackPanel>
+        <Label Name="lblResult"/>
+        <Button Content="No Control Template"/>
+        <Button Click="Button_Click" Padding="5" Background="Red" Content="Simple control Template" Template="{StaticResource ButtonTemplate}" Height="50" Width="250" />
+        <Button Click="Button_Click" IsEnabled="False"  Padding="5" Background="Red" Content="Disabled simple template"  Template="{StaticResource ButtonTemplate}" Height="50" Width="250" />
+        <Button Click="Button_Click" Content="Animated button"  Template="{StaticResource AnimatedButtonTemplate}" Height="50" Width="250" />
+    </StackPanel>
+</Window>

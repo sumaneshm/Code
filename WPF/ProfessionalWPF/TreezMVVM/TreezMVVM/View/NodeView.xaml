@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TreezMVVM.View.NodeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              xmlns:converters="clr-namespace:TreezMVVM.Converters"
+        xmlns:behaviors="clr-namespace:TreezMVVM.Behaviors"
+             xmlns:views="clr-namespace:TreezMVVM.View"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:NodeTypeBrushConverter
+            ArtificialColor="Brown"
+            OfficialColor="Blue"
+            GenericColor="DarkGreen"
+            x:Key="nodeTypeBrushConverter"/>
+        <converters:NumberTypeColorConverter 
+            GFRMColor="LightCyan"
+            ChorusColor="LightGreen"
+            x:Key="numberTypeColorConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0" Height="300" VerticalAlignment="Top">
+            <TreeView ItemsSource="{Binding}">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="behaviors:TreeViewItemBehavior.IsBroughtIntoViewWhenSelected"
+                                Value="true"/>
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Number}" Background="{Binding ElementName=chkShowChorus, Path=IsChecked, Converter={StaticResource ResourceKey=numberTypeColorConverter}}"/>
+                            <TextBlock Text="{Binding Name}" Margin="10 0 0 0" Foreground="{Binding Path=NType, Converter={StaticResource ResourceKey=nodeTypeBrushConverter}}" />
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </ScrollViewer>
+
+        <!--<views:AlternateNodeDataView DataContext="{Binding Data}"/>-->
+       
+    </Grid>
+</UserControl>

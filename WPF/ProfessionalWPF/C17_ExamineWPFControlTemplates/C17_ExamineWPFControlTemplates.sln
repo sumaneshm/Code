@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C17_ExamineWPFControlTemplates", "C17_ExamineWPFControlTemplates\C17_ExamineWPFControlTemplates.csproj", "{A811BE1D-49A8-43EA-96CC-FE02FDA1C132}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A811BE1D-49A8-43EA-96CC-FE02FDA1C132}.Debug|x86.ActiveCfg = Debug|x86
+		{A811BE1D-49A8-43EA-96CC-FE02FDA1C132}.Debug|x86.Build.0 = Debug|x86
+		{A811BE1D-49A8-43EA-96CC-FE02FDA1C132}.Release|x86.ActiveCfg = Release|x86
+		{A811BE1D-49A8-43EA-96CC-FE02FDA1C132}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

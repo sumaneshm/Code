@@ -1,0 +1,21 @@
+﻿<Window x:Class="SmallFontBluryStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="250" Width="425">
+    <StackPanel>
+        
+        <TextBlock FontSize="12" Margin="5" TextWrapping="Wrap">
+            This is a very small text and it may not appear clearly - WPF way
+        </TextBlock>
+        <TextBlock FontSize="12" Margin="5" TextWrapping="Wrap" TextOptions.TextFormattingMode="Display">
+            This is a very small text and yet it will be displayed clearly - Old Way
+        </TextBlock>
+
+        <TextBlock FontSize="25" Margin="5" TextWrapping="Wrap">
+           This is a very big text and it will appear clearly - WPF way
+        </TextBlock>
+        <TextBlock FontSize="25" Margin="5" TextWrapping="Wrap" TextOptions.TextFormattingMode="Display">
+            This is a very big text and yet it will NOT be displayed clearly - Old way
+        </TextBlock>
+    </StackPanel>
+</Window>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="C17_VisualTreeDisplay.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Click="showVisualDisplay_Click"  Name="showVisualDisplay">Show Visual Display</Button>
+        <TextBlock Background="Yellow" FontFamily="Verdana" FontSize="20" Padding="10">Sumanesh</TextBlock>
+        <Button Click="showVisualDisplay_Click">Something else</Button>
+    </StackPanel>
+</Window>

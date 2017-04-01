@@ -1,0 +1,14 @@
+﻿<Window x:Class="TextCommandStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" FocusManager.IsFocusScope="True">
+            <Button Content="Cut" Command="Cut"/>
+            <Button Command="Copy">Copy</Button>
+            <Button Command="Paste">Paste</Button>
+        </StackPanel>
+        <TextBox Height="142" Name="txtInput"/>
+        <TextBox Height="142"/>
+    </StackPanel>
+</Window>

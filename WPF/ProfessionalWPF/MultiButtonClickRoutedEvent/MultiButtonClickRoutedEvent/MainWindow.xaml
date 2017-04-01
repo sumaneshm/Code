@@ -1,0 +1,14 @@
+﻿<Window x:Class="MultiButtonClickRoutedEvent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Button.Click="ClickedAButton">
+            <Button Name="btnA" Tag="First" HorizontalAlignment="Center" Width="150">Button A</Button>
+            <Button Name="btnB" Tag="Second" HorizontalAlignment="Center" Width="150">Button B</Button>
+            <Button Name="btnC" Tag="Third" HorizontalAlignment="Center" Width="150">Button C</Button>
+            <Label Name="lblResult" HorizontalAlignment="Center" BorderBrush="DarkGreen" BorderThickness="3" Background="LightGreen" Margin="25">Result</Label>
+        </StackPanel>
+        
+    </Grid>
+</Window>

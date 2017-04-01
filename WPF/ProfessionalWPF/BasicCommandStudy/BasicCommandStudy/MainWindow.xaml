@@ -1,0 +1,15 @@
+﻿<Window x:Class="BasicCommandStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Command="New"/>
+            </MenuItem>
+        </Menu>
+        <Button Command="New" CommandParameter="Sumanesh" Width="100" Content="{x:Static ApplicationCommands.New}" Height="50"/>
+        <Button Command="SelectAll" CommandParameter="Sumanesh" Width="100" Content="{Binding RelativeSource={RelativeSource Self},Path=Command.Text}" Height="50"/>
+    </StackPanel>
+</Window>

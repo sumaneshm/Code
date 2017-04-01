@@ -1,0 +1,30 @@
+﻿<Window x:Class="KeyPressEventStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="5">Type here:</TextBlock>
+            <TextBox Grid.Column="1" Name="txtInput" Margin="5"/>
+        </Grid>
+        <ListBox Name="lstMessages" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Name="IsIgnoreRepeatedKeys" Grid.Column="0">Ignore Repeated Keys</CheckBox>
+            <Button Name="btnClear" Grid.Column="2" Margin="5" Width="100">Clear</Button>
+        </Grid>
+    </Grid>
+</Window>

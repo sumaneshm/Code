@@ -1,0 +1,30 @@
+﻿<Window x:Class="C18_FlipPanelControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:C18_FlipPanelControl"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <local:FlipPanel x:Name="panel" BorderBrush="DarkOrange"
+                         BorderThickness="3" CornerRadius="4" Margin="10">
+            <local:FlipPanel.FrontContent>
+                <StackPanel Margin="6">
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkOrange">This is the front side of the FlipPanel.</TextBlock>
+                    <Button Margin="3" Padding="3" Content="Button One"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Two"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Three"></Button>
+                    <Button Margin="3" Padding="3" Content="Button Four"></Button>
+                </StackPanel>
+            </local:FlipPanel.FrontContent>
+            <local:FlipPanel.BackContent>
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextWrapping="Wrap" Margin="3" FontSize="16" Foreground="DarkMagenta">This is the back side of the FlipPanel.</TextBlock>
+                    <Button Grid.Row="2" Margin="3" Padding="10" Content="Flip Back to Front" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"></Button>
+                </Grid>
+            </local:FlipPanel.BackContent>
+        </local:FlipPanel>
+    </StackPanel>
+</Window>

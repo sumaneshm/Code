@@ -1,0 +1,20 @@
+﻿<Window x:Class="TwoWayBindingStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock>
+        Enter a number :
+        </TextBlock>
+        <TextBox Name="txtNumber1" Text="{Binding ElementName=theSlider,Path=Value,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock>This will reflect the number through twoway binding</TextBlock>
+        <TextBox Name="txtNumber2" Text="25"/>
+        <TextBlock>And finally the slider</TextBlock>
+        <Slider Minimum="25" Maximum="100" Name="theSlider" Value="{Binding ElementName=txtNumber2,Path=Text}"/>
+        <TextBlock>This one is going to be an explicit binding</TextBlock>
+        <StackPanel FlowDirection="LeftToRight" Orientation="Horizontal">
+            <TextBox Name="txtExplicitBinding" Width="200" Padding="5" Text="{Binding ElementName=theSlider,Path=Value,UpdateSourceTrigger=Explicit,Mode=TwoWay}"/>
+            <Button Name="btnUpdate" Padding="5" Width="100" Click="btnUpdate_Click">Update</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

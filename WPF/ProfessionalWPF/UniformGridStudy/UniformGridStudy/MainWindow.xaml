@@ -1,0 +1,11 @@
+﻿<Window x:Class="UniformGridStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <UniformGrid Rows="2" Columns="2">
+        <TextBlock>Top Left</TextBlock>
+        <TextBlock>Top Right</TextBlock>
+        <TextBlock>Bottom Left</TextBlock>
+        <TextBlock>Bottom Right</TextBlock>
+    </UniformGrid>
+</Window>

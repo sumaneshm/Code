@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C11_CustomBehavior", "C11_CustomBehavior\C11_CustomBehavior.csproj", "{56E06F41-2304-4752-9844-AEB2B15C9E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorLibrary", "BehaviorLibrary\BehaviorLibrary.csproj", "{D4606350-DBE7-415C-86C8-FA5EA8755F47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56E06F41-2304-4752-9844-AEB2B15C9E57}.Debug|x86.ActiveCfg = Debug|x86
+		{56E06F41-2304-4752-9844-AEB2B15C9E57}.Debug|x86.Build.0 = Debug|x86
+		{56E06F41-2304-4752-9844-AEB2B15C9E57}.Release|x86.ActiveCfg = Release|x86
+		{56E06F41-2304-4752-9844-AEB2B15C9E57}.Release|x86.Build.0 = Release|x86
+		{D4606350-DBE7-415C-86C8-FA5EA8755F47}.Debug|x86.ActiveCfg = Debug|x86
+		{D4606350-DBE7-415C-86C8-FA5EA8755F47}.Debug|x86.Build.0 = Debug|x86
+		{D4606350-DBE7-415C-86C8-FA5EA8755F47}.Release|x86.ActiveCfg = Release|x86
+		{D4606350-DBE7-415C-86C8-FA5EA8755F47}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

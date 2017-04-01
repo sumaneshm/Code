@@ -1,0 +1,11 @@
+﻿<Window x:Class="C10_ColorPickerUserControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:C10_ColorPickerUserControl"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <my:MyColorPicker x:Name="colorChooser" Color="Beige" ColorChanged="colorPicker_ColorChanged" />
+        <Label Name="myLabel">Results</Label>
+        <Button Command="Undo" CommandTarget="{Binding ElementName=colorChooser}">Undo</Button>
+    </StackPanel>
+</Window>

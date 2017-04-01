@@ -1,0 +1,12 @@
+﻿<Window x:Class="CustomRoutedUICommandStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CustomRoutedUICommandStudy"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyFirstCommand.Command" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <StackPanel>
+        <Button Margin="5" Command="local:MyFirstCommand.Command">Call Command</Button>
+    </StackPanel>
+</Window>

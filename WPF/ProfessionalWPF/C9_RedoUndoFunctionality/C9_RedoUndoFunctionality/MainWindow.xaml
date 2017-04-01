@@ -1,0 +1,22 @@
+﻿<Window x:Class="C9_RedoUndoFunctionality.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:C9_RedoUndoFunctionality"
+        Title="MainWindow" Height="420" Width="525">
+    <StackPanel>
+        <ToolBar>
+            <Button Command="Cut" Content="Cut"/>
+            <Button Command="Copy" Content="Copy"/>
+            <Button Command="Paste" Content="Paste"/>
+            <Button Command="Undo" Content="Undo"/>
+            <Separator/>
+            <Button Command="local:MainWindow.ApplicationUndoCommand" Content="Application Undo"/>
+            <Button Command="local:MainWindow.ApplicationRedoCommand" Content="Application Redo"/>
+        </ToolBar>
+        <TextBox Height="150"/>
+        <StackPanel Orientation="Horizontal">
+            <ListBox Name="lstUndoCommands" DisplayMemberPath="CommandName" Width="250" Height="200"/>
+            <ListBox Name="lstRedoCommands" DisplayMemberPath="CommandName"  Width="250" Height="200"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

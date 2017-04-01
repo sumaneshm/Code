@@ -1,0 +1,12 @@
+﻿<Window x:Class="ScrollBarBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Slider x:Name="fontSize" Minimum="1" Maximum="100"/>
+        <TextBlock x:Name="txtDisplay" Text="Type the text which you want to display"/>
+        <Label Content="{Binding ElementName=txtDisplay, Path=Text}"
+                FontSize="{Binding ElementName=fontSize,Path=Value}"/>
+        <TextBox Text="{Binding ElementName=fontSize,Path=Value,Mode=TwoWay}"/>
+    </StackPanel>
+</Window>

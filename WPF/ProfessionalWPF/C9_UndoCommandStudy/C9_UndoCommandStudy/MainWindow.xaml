@@ -1,0 +1,21 @@
+﻿<Window x:Class="C9_UndoCommandStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:C9_UndoCommandStudy"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" Command="local:MainWindow.ApplicationUndo"/>
+    </Window.CommandBindings>
+    <StackPanel>
+        <ToolBar>
+            <Button Command="Cut" Content="Cut"/>
+            <Button Command="Copy" Content="Copy"/>
+            <Button Command="Paste" Content="Paste"/>
+            <Button Command="Undo" Content="Undo"/>
+            <Separator/>
+            <Button Command="local:MainWindow.ApplicationUndo" Content="Reverse the command"/>
+        </ToolBar>
+        <TextBox Name="myText" Height="100" BorderThickness="3" BorderBrush="LightGreen"/>
+        <ListBox  Name="lstCommands" Height="180" DisplayMemberPath="CommandName" BorderThickness="3" BorderBrush="Blue"/>
+    </StackPanel>
+</Window>

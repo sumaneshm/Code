@@ -1,0 +1,17 @@
+﻿<Window x:Class="C17_FirstThemeStudy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Width="200" Padding="5" Content="Button 1"/>
+        <Button Width="200" Padding="5" Content="Button 2"/>
+        <Button Width="200" Padding="5" Content="Button 3"/>
+        <Label Name="lblThemeName"/>
+        <ComboBox Name="cboTheme" SelectionChanged="cboTheme_SelectionChanged">
+            <ComboBoxItem>Orange</ComboBoxItem>
+            <ComboBoxItem>Red</ComboBoxItem>
+            <ComboBoxItem>Blue</ComboBoxItem>
+        </ComboBox>
+        
+    </StackPanel>
+</Window>
