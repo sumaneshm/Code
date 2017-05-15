@@ -1,0 +1,10 @@
+﻿@model ProductsListViewModel
+
+@foreach (var p in Model.Products)
+{
+   @Html.Partial("ProductSummary", p) 
+}
+<div page-model="@Model.PagingInfo" page-action="List" 
+     page-cls-enabled="true" page-cls-name="@("btn")" page-cls-normal="@("btn-default")" page-cls-selected="@("btn-primary")"
+     page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right"> </div>

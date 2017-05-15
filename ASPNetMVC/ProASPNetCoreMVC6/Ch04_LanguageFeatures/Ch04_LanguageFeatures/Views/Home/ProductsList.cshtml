@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Product>
+
+@{ Layout = null;   }
+
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Related</th>
+            </tr>
+        </thead>
+        @foreach (var p in Model)
+        {
+
+            <tr>
+                <td>@p?.Name</td>
+                <td>@p?.Price</td>
+                <td>@p?.Related?.Name</td>
+            </tr>
+        }
+    </table>
+
+    Total : @Model.Total()
+</body>
+</html>

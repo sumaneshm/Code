@@ -1,18 +1,14 @@
-﻿@model IEnumerable<string>
-
-@{Layout = null;}
+﻿@{ Layout = null;}
 
 <html>
 <head>
-    <meta name="viewport" content="width-device-width" />
-    <title>Language Features</title>
+    <title>Home</title>
 </head>
 <body>
-    <ul>
-        @foreach (string s in Model)
-        {
-            <li>@s</li>
-        }
-    </ul>
+    <a asp-action="Stringlist">String List</a><br />
+    <a asp-action="RelatedProducts">Related Products</a><br />
+    <a asp-action="FilteredProducts">Filtered Products</a><br />
+    <a asp-action="PerformLongRunningTask">Long Running Task</a> <br />
+    <a asp-action="PerformSyncLongRunningTask">Sync Long Running Task</a>
 </body>
 </html>
