@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Product>
+
+@{ 
+    ViewBag.Title = "All Products";
+    Layout = "_AdminLayout";
+}
+
+<table class="table table-bordered table-striped table-condensed">
+    <tr>
+        <th class="text-right">ID</th>
+        <th>Name</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Actions</th>
+    </tr>
+    @foreach(var p in Model)
+    {
+        <tr>
+            <td class="text-right">@p.ProductID</td>
+            <td>@p.Name</td>
+            <td class="text-right">@p.Price</td>
+            <td class="text-right">
+                <a asp-action="Edit" 
+            </td>
+        </tr>
+
+    }
+</table>

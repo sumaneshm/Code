@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using SportsStore.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace SportsStore
 {
@@ -28,6 +29,11 @@ namespace SportsStore
 
             services.AddMvc();
             services.AddTransient<IProductRepository, EFProductRepository>();
+            services.AddTransient<IOrderRepository, EFOrderRepository>();
+            services.AddScoped(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddMemoryCache();
+            services.AddSession();
 
         }
 
@@ -36,6 +42,7 @@ namespace SportsStore
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
@@ -47,7 +54,6 @@ namespace SportsStore
                 routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
             });
 
-            SeedData.EnsurePopulated(app);
         }
     }
 }
