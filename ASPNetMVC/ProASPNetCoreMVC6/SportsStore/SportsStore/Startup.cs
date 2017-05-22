@@ -6,6 +6,7 @@ using SportsStore.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SportsStore
 {
@@ -26,7 +27,11 @@ namespace SportsStore
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration["Data:SportsStoreProducts:ConnectionString"]));
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseSqlServer(Configuration["Data:SportStoreIdentity:ConnectionString"]));
 
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
             services.AddMvc();
             services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddTransient<IOrderRepository, EFOrderRepository>();
@@ -44,6 +49,7 @@ namespace SportsStore
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {
@@ -53,6 +59,10 @@ namespace SportsStore
                 routes.MapRoute("Empty", "", new { controller = "Product", action = "List", page = 1 });
                 routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
             });
+
+            SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulatedAsync(app);
+
 
         }
     }

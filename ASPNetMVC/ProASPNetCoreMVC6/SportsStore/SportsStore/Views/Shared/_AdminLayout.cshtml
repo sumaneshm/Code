@@ -3,11 +3,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css"/>
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*.min.css" />
+    <script asp-src-include="lib/jquery/**/jquery.min.js"></script>
+    <script asp-src-include="lib/jquery-validation/**/jquery.validate.min.js"></script>
+    <script asp-src-include="lib/jquery-validation-unobtrusive/**/*.min.js"></script>
     <title>@ViewBag.Title</title>
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
 </head>
 <body class="panel panel-default">
-    <div class="panel-heading"><h4>@ViewBag.Title</h4></div>
+    <div class="panel-heading">
+        <h4>@ViewBag.Title</h4>
+        <a class="btn btn-sm btn-primary pull-right" asp-action="Logout" asp-controller="Account">Logout</a>
+    </div>
+    @{ var message = TempData["message"]?.ToString();
+
+        if (!string.IsNullOrWhiteSpace(message))
+        {
+            <div class="alert alert-warning">
+                <h4>@message</h4>
+            </div>
+        }
+    }
     <div class="panel-body">
         @RenderBody()
     </div>

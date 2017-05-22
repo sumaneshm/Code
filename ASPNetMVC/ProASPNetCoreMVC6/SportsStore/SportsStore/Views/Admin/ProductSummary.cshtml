@@ -1,0 +1,36 @@
+﻿@model Product
+@{Layout = "_AdminLayout";}
+
+<h2>Enter product Details</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" name="ProductID" value="@Model.ProductID" />
+
+    <div class="form-group">
+        <label>Name:</label>
+        <div><span class="text-danger" asp-validation-for="Name"/></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Category:</label>
+        <div><span class="text-danger" asp-validation-for="Category" /></div>
+        <input asp-for="Category" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Description :</label>
+        <div><span class="text-danger" asp-validation-for="Description" /></div>
+        <input asp-for="Description" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Price :</label>
+        <div><span class="text-danger" asp-validation-for="Price" /></div>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+    <a asp-action="Index" class="btn btn-lg">Cancel</a>
+</form>

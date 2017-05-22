@@ -4,7 +4,7 @@
     ViewBag.Title = "All Products";
     Layout = "_AdminLayout";
 }
-
+<h3>Products List</h3>
 <table class="table table-bordered table-striped table-condensed">
     <tr>
         <th class="text-right">ID</th>
@@ -19,9 +19,16 @@
             <td>@p.Name</td>
             <td class="text-right">@p.Price</td>
             <td class="text-right">
-                <a asp-action="Edit" 
+                <form asp-action="Delete" method="post">
+                    <a class="btn btn-warning btn-sm" asp-controller="Admin" asp-action="Edit" asp-route-productId="@p.ProductID">Edit</a>
+                    <input type="hidden" value="@p.ProductID" name="productID" />
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
             </td>
         </tr>
 
     }
+    <tr>
+        <td colspan="4"><a asp-action="AddNew" class="btn btn-primary center-block">Add New</a></td>
+    </tr>
 </table>
