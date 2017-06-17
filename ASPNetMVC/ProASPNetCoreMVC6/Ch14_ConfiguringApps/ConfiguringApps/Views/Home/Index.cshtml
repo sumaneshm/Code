@@ -1,0 +1,25 @@
+﻿@model Dictionary<string, string>
+
+<html>
+<head>
+    <link asp-href-include="lib/bootstrap/dist/css/*.min.css" rel="stylesheet" />
+    <title>Result</title>
+</head>
+<body class="panel-body">
+    <table class="table table-bordered table-condensed table-striped">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Key</td>
+                <td>@entry.Value</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
