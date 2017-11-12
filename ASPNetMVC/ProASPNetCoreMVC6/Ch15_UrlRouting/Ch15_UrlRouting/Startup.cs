@@ -30,10 +30,14 @@ namespace Ch15_UrlRouting
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseMvc(routes => {
-                routes.Routes.Add(new LegacyRoute(new[] { "/aadhavan", "/aghilan" }));
-                routes.MapRoute(name: "NewRoute", template: "App/Do{action}", defaults: new { controller = "Home" });
+                routes.MapRoute(name: "areas", template: "{area:exists}/{controller=Home}/{action=Index}");
+
+                routes.Routes.Add(new LegacyRoute( app.ApplicationServices, new[] { "/aadhavan", "/aghilan" }));
+
+                //routes.MapRoute(name: "NewRoute", template: "App/Do{action}", defaults: new { controller = "Home" });
                 //routes.MapRoute(name: "ShopSchema", template: "Shop/{action=Index}", defaults: new { controller = "Home" });
                 //routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id:weekday?}");
+
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute(name: "out", template: "outbounds/{controller=Home}/{action=Index}");
                 }

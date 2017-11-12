@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +13,12 @@ namespace Ch15_UrlRouting.Infrastructure
     public class LegacyRoute : IRouter
     {
         private string[] urls;
+        private readonly IRouter mvcRoute;
 
-        public LegacyRoute(string[] targetUrls)
+        public LegacyRoute(IServiceProvider services, string[] targetUrls)
         {
             urls = targetUrls;
+            mvcRoute = services.GetRequiredService<MvcRouteHandler>();
         }
 
         public VirtualPathData GetVirtualPath(VirtualPathContext context)
@@ -22,21 +26,18 @@ namespace Ch15_UrlRouting.Infrastructure
             return null;
         }
 
-        public Task RouteAsync(RouteContext context)
+        public async Task RouteAsync(RouteContext context)
         {
             string requestedUrl = context.HttpContext.Request.Path.Value.TrimEnd('/');
 
             if (urls.Contains(requestedUrl,StringComparer.OrdinalIgnoreCase))
             {
-                context.Handler = async ctx =>
-                {
-                    HttpResponse response = ctx.Response;
-                    byte[] bytes = Encoding.ASCII.GetBytes($"UR:{requestedUrl}");
-                    await response.Body.WriteAsync(bytes, 0, bytes.Length);
-                };
-            }
+                context.RouteData.Values["controller"] = "Legacy";
+                context.RouteData.Values["action"] = "GetLegacyRoute";
+                context.RouteData.Values["legacyUrl"] = requestedUrl;
 
-            return Task.CompletedTask;
+                await mvcRoute.RouteAsync(context);
+            }
         }
     }
 }

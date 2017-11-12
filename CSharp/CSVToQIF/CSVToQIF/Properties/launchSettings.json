@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "CSVToQIF": {
+      "commandName": "Project"
+    }
+  }
+}
