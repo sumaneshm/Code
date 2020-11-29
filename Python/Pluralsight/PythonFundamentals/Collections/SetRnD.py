@@ -9,7 +9,7 @@ print("empty set can be created by set constructor.s=", s)
 s = {1, 20, 2, 3, 3, 4, 5, -1, 2, 12, 14}
 print("After a duplicate 3 is removed off the set, s=", s)
 
-# sets are iterable but the order is orbitrary
+# sets are iterable but the order is arbitrary
 for i in s:
     print(i)
 
