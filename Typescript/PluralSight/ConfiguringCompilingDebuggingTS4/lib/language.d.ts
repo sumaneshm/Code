@@ -1,0 +1,1 @@
+export function emphasizeString ( string : string, magnitute : number) : string ;

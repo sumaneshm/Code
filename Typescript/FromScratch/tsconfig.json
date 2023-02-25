@@ -1,0 +1,12 @@
+{
+ "compilerOptions": {
+  "removeComments": true,
+  "outDir": "./dist/js",
+  "sourceMap": true
+ },
+ "include": ["src/**/*"],
+ "exclude": ["node_modules"],
+ "references": [
+    { "path" : "./src/interfaces"}
+ ]
+}
