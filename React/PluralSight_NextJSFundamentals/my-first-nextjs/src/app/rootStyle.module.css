@@ -1,0 +1,18 @@
+.homeLink {
+    text-decoration:none;
+    color: white;
+}
+
+.menuBarLink {
+    text-decoration: none;
+    color: #bdfef2;
+}
+
+.header {
+    width: 100%;
+    padding: 50px 0px 50px;
+    background: #212121;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+}

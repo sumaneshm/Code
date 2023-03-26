@@ -2,7 +2,9 @@
     "compilerOptions": {
         "composite" : true,
         "outDir": "../../dist/js",
-        "sourceMap": true
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames":true,
+        "strict": true
     },
     "include": ["index.ts"]
 }
