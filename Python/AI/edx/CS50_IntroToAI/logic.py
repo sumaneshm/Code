@@ -226,3 +226,5 @@ visit_salem_not_rain = Implication(salem, Not(rain))
 ModelChecker([visit_salem, not_visit_salem, biconditional, visit_salem_not_rain]).evaluate_models()
 
 # ModelChecker([single]).evaluate_models()
+
+# ModelChecker([visit_salem, not_visit_salem, biconditional, visit_salem_not_rain]).evaluate_models()
