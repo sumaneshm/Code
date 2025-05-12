@@ -1,13 +1,15 @@
 import itertools
+
 class Sentence:
     def evaluate(self):
         raise NotImplementedError("Subclasses should implement this method.")
+    
     def __str__(self):
         raise NotImplementedError("Subclasses should implement this method.")
     
     def __hash__(self):
         return hash(self.__class__.__name__) + hash(tuple(self.__dict__.items()))
-        
+    
     def __eq__(self, value):    
         return isinstance(value, self.__class__) and self.__hash__() == value.__hash__()
     
@@ -54,7 +56,7 @@ class And(Sentence):
     
     def all_symbols(self):
         return set().union(*(arg.all_symbols() for arg in self.args))   
-   
+
 class Or(Sentence):
     def __init__(self, *args):
         self.args = args
@@ -92,7 +94,6 @@ class Not(Sentence):
     
     def all_symbols(self):  
         return self.arg.all_symbols()
-    
 
 class Implication(Sentence):
     def __init__(self, antecedent, consequent):
@@ -113,7 +114,7 @@ class Implication(Sentence):
     
     def all_symbols(self):
         return self.antecedent.all_symbols().union(self.consequent.all_symbols())
-    
+
 class Biconditional(Sentence):  
     def __init__(self, left, right):
         self.left = left
@@ -133,7 +134,7 @@ class Biconditional(Sentence):
     
     def all_symbols(self):  
         return self.left.all_symbols().union(self.right.all_symbols())
-    
+
 class ModelChecker: 
     def __init__(self, sentences):
         self.sentences = sentences
@@ -170,11 +171,9 @@ class ModelChecker:
 
         # Print the models
         models = []
-
         for i, truth_value in enumerate(truth_values):
             model = dict(zip(symbols, truth_value))
             models.append(model)
-
         return models 
 
     def evaluate_models(self):
@@ -183,36 +182,7 @@ class ModelChecker:
                 print(f"Model {model} satisfies all sentences.")
             else:
                 print(f"Model {model} does not satisfy all sentences.")
-    
-# sentences = [
-#     Symbol("A"),
-#     Symbol("B"),
-#     And(Symbol("A"), Symbol("B")),
-#     # Or(Symbol("A"), Not(Symbol("B"))),
-#     # Implication(Symbol("A"), Symbol("B")),
-#     # Biconditional(Symbol("A"), Symbol("B")), 
-#     # And(Symbol("A"), Or(Symbol("B"), Not(Symbol("C")))),
-# ]
 
-# # Example usage
-# model_checker = ModelChecker(sentences)
-# # model_checker.assign("A", True) 
-# # model_checker.assign("B", False)
-# # model_checker.assign("C", True) 
-
-# # model_checker.evaluate()
-# # print("Model:", model_checker)
-
-# # for sentence in sentences:
-# #     print(f"Sentence: {sentence}, Evaluation: {sentence.evaluate()}")
-
-
-# # for symbol in model_checker.all_symbols():
-# #     print(f"Symbol: {symbol}")
-
-# # model_checker.generate_models()
-
-# model_checker.evaluate_models()
 
 rain = Symbol("Rain")
 salem= Symbol("Salem")
@@ -221,8 +191,5 @@ not_visit_salem = Implication(Not(rain), Not(salem))
 biconditional = Biconditional(visit_salem, not_visit_salem)    
 visit_salem_not_rain = Implication(salem, Not(rain))
 
-# single = And ( visit_salem, not_visit_salem, biconditional, visit_salem_not_rain)
 
 ModelChecker([visit_salem, not_visit_salem, biconditional, visit_salem_not_rain]).evaluate_models()
-
-# ModelChecker([single]).evaluate_models()
