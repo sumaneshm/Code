@@ -16,10 +16,12 @@ probability = model.probability(
                 rain_values.index("none"),
                 maintenance_values.index("no"),
                 train_values.index("on time"),
-                appoinment_values.index("attend"),
+                appoinment_values.index("miss"),
             ]
         ]
     )
 )
 
 print(probability)
+
+# Obsidian reference [[Inference in Probablity#How to infer from Bayesian Network diagram]]
