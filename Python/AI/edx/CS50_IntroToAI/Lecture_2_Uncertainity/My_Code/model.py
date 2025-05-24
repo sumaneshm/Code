@@ -28,10 +28,10 @@ grass_wet = ConditionalCategorical(
     ]
 )
 
-model = BayesianNetwork()
+bayesian_model = BayesianNetwork()
 
-model.add_distributions([rain, sprinker, grass_wet])
-model.add_edge(rain, grass_wet)
-model.add_edge(sprinker, grass_wet)
+bayesian_model.add_distributions([rain, sprinker, grass_wet])
+bayesian_model.add_edge(rain, grass_wet)
+bayesian_model.add_edge(sprinker, grass_wet)
 
 # Obsidian reference [[Inference in Probablity#ChatGPT example]]
