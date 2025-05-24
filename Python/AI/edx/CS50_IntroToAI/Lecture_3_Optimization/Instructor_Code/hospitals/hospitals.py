@@ -37,9 +37,15 @@ class Space():
         count = 0
 
         # Start by initializing hospitals randomly
-        self.hospitals = set()
-        for i in range(self.num_hospitals):
-            self.hospitals.add(random.choice(list(self.available_spaces())))
+        initial_available_spaces = list(self.available_spaces())
+        if len(initial_available_spaces) < self.num_hospitals:
+            raise ValueError(
+                f"Not enough available spaces ({len(initial_available_spaces)}) "
+                f"to place {self.num_hospitals} hospitals. "
+                "Consider a smaller number of hospitals or a larger grid."
+            )
+        self.hospitals = set(random.sample(initial_available_spaces, self.num_hospitals))
+
         if log:
             print("Initial state: cost", self.get_cost(self.hospitals))
         if image_prefix:
@@ -83,6 +89,8 @@ class Space():
             # Generate image
             if image_prefix:
                 self.output_image(f"{image_prefix}{str(count).zfill(3)}.png")
+        
+        return self.hospitals # Ensure hospitals are returned if max iterations reached
 
     def random_restart(self, maximum, image_prefix=None, log=False):
         """Repeats hill-climbing multiple times."""
@@ -103,8 +111,10 @@ class Space():
                     print(f"{i}: Found state: cost {cost}")
 
             if image_prefix:
-                self.output_image(f"{image_prefix}{str(i).zfill(3)}.png")
-
+                # Output the image of the best set of hospitals found so far
+                if best_hospitals is not None:
+                    self.output_image(f"{image_prefix}-restart{str(i).zfill(3)}.png", hospitals_to_draw=best_hospitals)
+                
         return best_hospitals
 
     def get_cost(self, hospitals):
@@ -133,7 +143,7 @@ class Space():
                 neighbors.append((r, c))
         return neighbors
 
-    def output_image(self, filename):
+    def output_image(self, filename, hospitals_to_draw=None):
         """Generates image with all houses and hospitals."""
         from PIL import Image, ImageDraw, ImageFont
         cell_size = 100
@@ -141,21 +151,36 @@ class Space():
         cost_size = 40
         padding = 10
 
+        current_hospitals_state = hospitals_to_draw if hospitals_to_draw is not None else self.hospitals
+
         # Create a blank canvas
         img = Image.new(
             "RGBA",
             (self.width * cell_size,
              self.height * cell_size + cost_size + padding * 2),
             "white"
-        )
-        house = Image.open("assets/images/House.png").resize(
-            (cell_size, cell_size)
-        )
-        hospital = Image.open("assets/images/Hospital.png").resize(
-            (cell_size, cell_size)
-        )
-        font = ImageFont.truetype("assets/fonts/OpenSans-Regular.ttf", 30)
+        )        
         draw = ImageDraw.Draw(img)
+
+        try:
+            house_img_path = "assets/images/House.png"
+            hospital_img_path = "assets/images/Hospital.png"
+            font_path = "assets/fonts/OpenSans-Regular.ttf"
+
+            house = Image.open(house_img_path).resize(
+                (cell_size, cell_size)
+            )
+            hospital = Image.open(hospital_img_path).resize(
+                (cell_size, cell_size)
+            )
+            font = ImageFont.truetype(font_path, 30)
+        except FileNotFoundError as e:
+            print(f"Warning: Could not load image asset: {e}. Image output may be incomplete or skipped.")
+            # Optionally, return or draw without images/text if assets are critical
+            font = ImageFont.load_default() # Fallback font
+        except Exception as e: # Catch other PIL errors
+            print(f"Warning: Error processing image assets: {e}. Image output may be affected.")
+            font = ImageFont.load_default() # Fallback font
 
         for i in range(self.height):
             for j in range(self.width):
@@ -171,7 +196,7 @@ class Space():
 
                 if (i, j) in self.houses:
                     img.paste(house, rect[0], house)
-                if (i, j) in self.hospitals:
+                if (i, j) in current_hospitals_state:
                     img.paste(hospital, rect[0], hospital)
 
         # Add cost
@@ -182,7 +207,7 @@ class Space():
         )
         draw.text(
             (padding, self.height * cell_size + padding),
-            f"Cost: {self.get_cost(self.hospitals)}",
+            f"Cost: {self.get_cost(current_hospitals_state)}",
             fill="white",
             font=font
         )
