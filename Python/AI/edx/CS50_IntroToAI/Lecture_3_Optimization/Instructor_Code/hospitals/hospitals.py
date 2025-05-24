@@ -186,14 +186,21 @@ class Space():
             fill="white",
             font=font
         )
-
         img.save(filename)
 
 
-# Create a new space and add houses randomly
-s = Space(height=10, width=20, num_hospitals=3)
-for i in range(15):
-    s.add_house(random.randrange(s.height), random.randrange(s.width))
+def run_hospital_placement_simulation():
+    """
+    Sets up and runs the hospital placement simulation.
+    """
+    # Create a new space and add houses randomly
+    s = Space(height=10, width=20, num_hospitals=3)
+    for i in range(15):
+        s.add_house(random.randrange(s.height), random.randrange(s.width))
 
-# Use local search to determine hospital placement
-hospitals = s.hill_climb(image_prefix="hospitals", log=True)
+    # Use local search to determine hospital placement
+    hospitals = s.hill_climb(image_prefix="hospitals", log=True)
+    print("Final hospital placements:", hospitals)
+
+if __name__ == "__main__":
+    run_hospital_placement_simulation()
