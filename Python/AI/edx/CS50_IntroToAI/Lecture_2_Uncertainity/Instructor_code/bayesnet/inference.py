@@ -1,5 +1,5 @@
 import torch
-from model import model
+from .model import model
 
 X = torch.tensor(
     [
@@ -21,14 +21,15 @@ states = (
     ("appointment", ["attend", "miss"]),
 )
 
-# Calculate predictions
-predictions = model.predict_proba(X_masked)
+def infer():
+    # Calculate predictions
+    predictions = model.predict_proba(X_masked)
 
-# Print predictions for each node
-for (node_name, values), prediction in zip(states, predictions):
-    if isinstance(prediction, str):
-        print(f"{node_name}: {prediction}")
-    else:
-        print(f"{node_name}")
-        for value, probability in zip(values, prediction[0]):
-            print(f"    {value}: {probability:.4f}")
+    # Print predictions for each node
+    for (node_name, values), prediction in zip(states, predictions):
+        if isinstance(prediction, str):
+            print(f"{node_name}: {prediction}")
+        else:
+            print(f"{node_name}")
+            for value, probability in zip(values, prediction[0]):
+                print(f"    {value}: {probability:.4f}")
