@@ -1,0 +1,13 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# IDE / Editor specific
+.vscode/
+.idea/
+.ipynb_checkpoints
